@@ -114,7 +114,7 @@ class MainMenuState extends MusicBeatState
 	override function update(elapsed:Float)
 	{
 		if(FlxG.keys.justPressed.FIVE){
-			FlxG.switchState(new TestState());
+			FlxG.switchState(new HitSoundState());
 		}
 		if (FlxG.sound.music.volume < 0.8)
 		{

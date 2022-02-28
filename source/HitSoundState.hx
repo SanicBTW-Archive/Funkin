@@ -10,7 +10,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.FlxSprite;
 import flixel.FlxG;
 
-class TestState extends MusicBeatState
+class HitSoundState extends MusicBeatState
 {
     var soundEXT = "ogg";
     //var soundEXT = Paths.SOUND_EXT;
