@@ -2244,7 +2244,7 @@ class PlayState extends MusicBeatState
 				note.kill();
 				notes.remove(note, true);
 				note.destroy();
-				FlxG.sound.stream(TestState.hitSPaths[TestState.ChosenHitSound.pop()], 1, false, null, true);
+				FlxG.sound.stream(HitSoundState.hitSPaths[HitSoundState.ChosenHitSound.pop()], 1, false, null, true);
 			}
 		}
 	}
