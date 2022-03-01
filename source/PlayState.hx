@@ -134,7 +134,7 @@ class PlayState extends MusicBeatState
 	var detailsPausedText:String = "";
 	#end
 
-	var hitSound:FlxSound;
+	public static var ssource:StorageVariables.Sources;
 
 	override public function create()
 	{
@@ -1022,7 +1022,9 @@ class PlayState extends MusicBeatState
 		lastReportedPlayheadPosition = 0;
 
 		if (!paused)
-			FlxG.sound.playMusic(Paths.inst(PlayState.SONG.song), 1, false);
+		{
+			FlxG.sound.stream(Paths.ExtInst(PlayState.SONG.song), 1, false);
+		}
 		FlxG.sound.music.onComplete = endSong;
 		vocals.play();
 
@@ -1047,7 +1049,9 @@ class PlayState extends MusicBeatState
 		curSong = songData.song;
 
 		if (SONG.needsVoices)
-			vocals = new FlxSound().loadEmbedded(Paths.voices(PlayState.SONG.song));
+		{
+			vocals = new FlxSound().loadStream(Paths.ExtVoices(PlayState.SONG.song));
+		}
 		else
 			vocals = new FlxSound();
 

@@ -120,8 +120,13 @@ class Paths
 		return haxe.io.Path.join([StorageVariables.DataRPath, '$key.json']);
 	}
 
-	inline static public function ExtInst(key:String)
+	inline static public function ExtInst(song:String)
 	{
-		return haxe.io.Path.join([StorageVariables.SongsRPath, '$key.$SOUND_EXT']);
+		return haxe.io.Path.join([StorageVariables.SongsRPath, '${song.toLowerCase()}', 'Inst.$SOUND_EXT']);
+	}
+
+	inline static public function ExtVoices(song:String)
+	{
+		return haxe.io.Path.join([StorageVariables.SongsRPath, '${song.toLowerCase()}', 'Voices.$SOUND_EXT']);
 	}
 }
