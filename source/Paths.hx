@@ -119,4 +119,9 @@ class Paths
 	{
 		return haxe.io.Path.join([StorageVariables.DataRPath, '$key.json']);
 	}
+
+	inline static public function ExtInst(key:String)
+	{
+		return haxe.io.Path.join([StorageVariables.SongsRPath, '$key.$SOUND_EXT']);
+	}
 }

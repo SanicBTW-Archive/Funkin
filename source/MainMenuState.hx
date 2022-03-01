@@ -116,6 +116,9 @@ class MainMenuState extends MusicBeatState
 		if(FlxG.keys.justPressed.FIVE){
 			FlxG.switchState(new HitSoundState());
 		}
+		if(FlxG.keys.justPressed.SIX){
+			FlxG.switchState(new ExtMusicState());
+		}
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
