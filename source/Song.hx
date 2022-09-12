@@ -38,14 +38,10 @@ class Song
 		this.bpm = bpm;
 	}
 
-	public static function loadFromJson(jsonInput:String, ?folder:String, source:StorageVariables.Sources):SwagSong
+	public static function loadFromJson(jsonInput:String, ?folder:String):SwagSong
 	{
 		var rawJson = "";
-		if(source == ASSETS){
-			rawJson = Assets.getText(Paths.json(folder.toLowerCase() + '/' + jsonInput.toLowerCase())).trim();
-		} else if (source == INTERNAL){
-			rawJson = sys.io.File.getContent(Paths.ExtJson(folder.toLowerCase() + '/' + jsonInput.toLowerCase())).trim();
-		}
+		rawJson = Assets.getText(Paths.json(folder.toLowerCase() + '/' + jsonInput.toLowerCase())).trim();
 
 		while (!rawJson.endsWith("}"))
 		{

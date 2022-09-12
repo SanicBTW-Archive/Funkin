@@ -7,7 +7,7 @@ import openfl.utils.Assets as OpenFlAssets;
 
 class Paths
 {
-	inline public static var SOUND_EXT = #if web "mp3" #else "ogg" #end;
+	inline public static var SOUND_EXT = "ogg";
 
 	static var currentLevel:String;
 
@@ -113,20 +113,5 @@ class Paths
 	inline static public function getPackerAtlas(key:String, ?library:String)
 	{
 		return FlxAtlasFrames.fromSpriteSheetPacker(image(key, library), file('images/$key.txt', library));
-	}
-
-	inline static public function ExtJson(key:String)
-	{
-		return haxe.io.Path.join([StorageVariables.DataRPath, '$key.json']);
-	}
-
-	inline static public function ExtInst(song:String)
-	{
-		return haxe.io.Path.join([StorageVariables.SongsRPath, '${song.toLowerCase()}', 'Inst.$SOUND_EXT']);
-	}
-
-	inline static public function ExtVoices(song:String)
-	{
-		return haxe.io.Path.join([StorageVariables.SongsRPath, '${song.toLowerCase()}', 'Voices.$SOUND_EXT']);
 	}
 }
